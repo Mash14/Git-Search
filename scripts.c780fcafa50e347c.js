@@ -1,0 +1,1 @@
+function scrollFunction(){}myButton=document.getElementsByClassName("btn-style"),window.onscroll=function(){scrollFunction()};
