@@ -62,7 +62,7 @@ html {
 
         <div class="row" *ngIf="users">
             <div class="col-md-6 mt-4">
-                <div class="card" style="color: white;">
+                <div class="card" style="color: white; font-weight: bold;">
                     <img src="{{users.avatar_url}}" alt='' class="center img-fluid">
 
                     <div class="card-title mt-3">
@@ -78,7 +78,7 @@ html {
             <div class="col-md-6 mt-4">
                 <div class="card">
                     <div class="card-title">
-                        <h4 class="text-center">{{users.login}}</h4>
+                        <h4 class="text-center" style="color: white;">{{users.login}}</h4>
                     </div>
                     <div class="card-body">
                         <div class="back">
