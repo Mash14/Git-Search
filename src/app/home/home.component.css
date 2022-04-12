@@ -1,0 +1,99 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 500px;
+}
+.card-text {
+    text-align: center;
+}
+.card-body {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.repositories {
+    /* color: white;
+    box-shadow: 3px 3px 5px yellow;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    float: left;
+    padding-top: 12px;
+    padding-left: 12px;
+    text-overflow: ellipsis; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block; */
+    color: white;
+    box-shadow: 3px 3px 5px yellow;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    float: left;
+    padding-top: 12px;
+    padding-left: 12px;
+    text-overflow: ellipsis;
+} 
+.btn {
+    padding: 2px;
+}
+
+h1 {
+    color: white;
+}
+
+.scroll-to-top {
+    position: relative;
+}
+
+.btn-position {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 20;
+}
+
+.btn-style {
+    background-color: #551b54;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    animation: movebtn 3s ease-in-out infinite;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.btn-style:hover {
+    animation: none;
+    background: #fff;
+    color: #551b54;
+    border: 2px solid #551b54;
+}
+
+@keyframes movebtn {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  access_token :'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',
+  apiUrl: "https://api.github.com/users",
+  CHROME_BIN:'/usr/bin/chromium',
 };
 
 /*

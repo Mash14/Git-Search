@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+.scroll-to-top {
+    position: relative;
+}
+
+.btn-position {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 20;
+}
+
+.btn-style {
+    background-color: #551b54;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    animation: movebtn 3s ease-in-out infinite;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+
+.btn-style:hover {
+    animation: none;
+    background: #fff;
+    color: #551b54;
+    border: 2px solid #551b54;
+}
+
+@keyframes movebtn {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+</style>
+<div class="container">
+    <div class="container-fluid">
+       <h1 class="text-center" id="top">Git Search</h1>
+        
+
+        <div class="row" *ngIf="users">
+            <div class="col-md-6 mt-4">
+                <div class="card" style="color: white;">
+                    <img src="{{users.avatar_url}}" alt='' class="center img-fluid">
+
+                    <div class="card-title mt-3">
+                        <h4 class="text-center">{{users.name}}</h4>
+                    </div>
+                    <div class="card-text">
+                        <p><strong>Bio:</strong> {{users.bio}}</p>
+                        <a href="{{users.html_url}}" target="_blank" class="btn btn-success">Profile</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-title">
+                        <h4 class="text-center">{{users.login}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="back">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Location: {{users.location}}
+                                </li>
+                                <li class="list-group-item">
+                                    Email: {{users.email}}
+                                </li>
+                                <li class="list-group-item">
+                                    Company: {{users.company}}
+                                </li>
+                                <li class="list-group-item">
+                                    Blog: <a href="{{users.blog}}">{{users.blog}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    Member since: {{users.created_at|date}}
+                                </li>
+                                <li class="list-group-item">
+                                    Profile URL: <a href="{{users.html_url}}">{{users.html_url}}</a> 
+                                </li>
+                            </ul>
+                        
+                            <div class="card-footer">
+                                <span class="badge alert-success mr-3">{{users.followers}} Followers</span>
+                                <span class="badge alert-warning mr-3">{{users.following}} Following</span>
+                                <span class="badge alert-primary mr-3">{{users.public_repos}} Repos</span>
+                                <span class="badge alert-danger mr-3">{{users.public_gists}} Gists</span>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+        <h2 *ngIf="repos" class="text-center mt-4" style="color: white;">Repositories</h2>
+        <div  class="card mt-3 mr-3"  *ngFor="let repo of repos" style="width: 22rem; height: 24rem;" class="repositories">
+            <div appApphighlight class="card-body text-center">
+                <div class="card-title" appApphighlight>
+                    <h4 class="text-center">Repo Name:<strong>&nbsp;{{repo.name}}</strong></h4>
+                </div>
+                <div class="card-text">
+                    <p style="text-overflow: ellipsis;">Desription: <em>{{repo.description|slice : 0:120}}</em></p>
+                    <p>Language: {{repo.language}}</p>
+                    <p>Created {{repo.created_at|dateCount}} on {{repo.created_at|date}}</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success mr-1"><i class="fa fa eye">{{repo.watchers_count}}</i></button>
+                    <button class="btn btn-primary mr-1"><i class="fa fa-code-fork">{{repo.forks}}</i></button>
+                    <button class="btn btn-warning mr-1"><a href="{{repo.html_url}}" target="_blank">View<i class="fa fa-arrow-circle-right"></i></a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class ="scroll-to-top">
+           <a href="#top"><span class="btn btn-position btn-style" title="Go to top">^</span></a>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    
+</script>
